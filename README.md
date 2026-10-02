@@ -1,6 +1,6 @@
 ------------PASSWORD AND KEY------------
 "123321" 
-"NOVA-22502-11004-54361-NOVA"
+"NOVA-54361-NOVA"
 ------------INFORMATION---------
 hello, This is my first open source project,
 1200+ lines of code, 75000+ characters,
