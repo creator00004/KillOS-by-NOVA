@@ -2,18 +2,22 @@ from binascii import a2b_qp
 from logging import root
 from math import e
 import platform
+import shutil
 import subprocess
 import time
 import locale
 import psutil
 import sys
 import os
+import requests
 import webbrowser
 import pyautogui
 import random
 from colorama import *
 import winsound
 from pathlib import Path
+import winreg as reg
+import sys
 
 class usercreate:
     def __init__(self, username, usermode, password):
@@ -55,7 +59,7 @@ sysinfo = {
     "OS": "KILL OS (linux)"
 }
 novacontactmail = "nova@killos.org"
-rootdir = Path("D:/killOS")
+rootdir = Path("C:/killOS")
 filesystem = [
     rootdir / "boot" / "killos",
     rootdir / "boot" / "mnt",
@@ -68,6 +72,11 @@ filesystem = [
     rootdir / "pacman"]
 for folder in filesystem:
     folder.mkdir(parents=True, exist_ok=True)
+forboot = Path(sys.argv[0]).resolve()
+forbootdir = rootdir / "boot" / "killos"
+sett = forbootdir / forboot.name
+if not sett.exists():
+    shutil.copy2(forboot, sett)
 session_time = time.time()
 error = "KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e"
 DNS = 1111, 8080
@@ -118,6 +127,9 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
      $$$"                         $$$$"
 '''
 bootflag = False
+key = "NOVA-543-NOVA"
+
+
 
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
 for i in range(30):
@@ -137,10 +149,20 @@ else:
     time.sleep(4)
     exit()
 for i in range(30):
-    print(f"\rLOADING SYSTEM...{symbols[i % len(symbols)]}", end="")
+    print(f"\rLOADING...{symbols[i % len(symbols)]}", end="")
     time.sleep(0.1)
-
+print(f"\rLOADING SYSTEM...{symbols[i % len(symbols)]}", end="")
+time.sleep(0.1)
 print("\nSYSTEM LOADED")
+print("\nNOVA key? 'pass' to enter the free edition")
+key2 = input()
+if key2 == key:
+    print("\rgranted")
+elif key2 == "pass":
+    print("\rgranted")
+else:
+    print("\rdenied")
+    exit()
 print("\nRunning system...")
 time.sleep(1)
 print("System run.")
@@ -254,6 +276,7 @@ if choice == 1:
             print("\r 38 cat /killos/killos.sh")
             print("\r 29 whoami")
             print("\r NOVAmenu")
+            print("\r 38 cat /killos/req.txt")
             print("\r 30 id")
             print("\r 31 pwd")
             print("\r 32 uname -a")
@@ -266,8 +289,11 @@ if choice == 1:
             print("\r 43 ls <direcroty>")
             print("\r 44 cat /etc/os-release")
             print("\r 46 mnt /boot")
-            print("\r 38 cat /killos/req.txt")
-            
+            print("\r 47 bootloader mode")
+            print("\r 49 minigame")
+            print("\r 50 releases")
+            print("\r 51 boonloader mode --dis")
+            print("\r 52 boonloader mode --en")
             
             
 
@@ -697,8 +723,8 @@ if choice == 1:
                 usercustom.usermode = 1
                 usercustom.username = "root"
                 print(f"\rUser {username} deleted successfully.")
-        elif command == "sudo usermode":
-            print("\rsudo usermode")
+        elif command == "sudo usermod":
+            print("\rsudo usermod")
             username = input("Enter the username to modify: ")
             if username == usercustom.username:
                 new_username = int(input("Enter the mode(0 and 1): "))
@@ -734,7 +760,7 @@ if choice == 1:
         elif command == "display":
             print("\rDisplay information:")
             print(f"\rUsername: {usercustom.username}")
-            print(f"\rUsermode: {usercustom.usermode}")
+            print(f"\rUsermod: {usercustom.usermode}")
             print(f"\rPassword: {usercustom.password}")
             print(f"\rSystem Information: {sysinfo}")
             print(f"\rSession Time: {session_time}")
@@ -1482,6 +1508,140 @@ if choice == 1:
                                     winsound.Beep(1000,40000)
                             else:
                                 print("invalid key")
+        elif command == "minigame":
+            print(" hello! welcome to minigame, controls: 1, 2, 3, 4")
+            while True:
+                gamechoisecont = input("choice: ")
+                if gamechoisecont == "1":
+                    print("|     |_______________________________")
+                    print("|        *      |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise = (choice("1", "2", "3", "4"))
+                    if choise == "1":
+                        print("|  x  |_______________________________")
+                        print("|        *      |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|     x  *      |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "2":
+                    print("|     |_______________________________")
+                    print("|               |    *|      |        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise2 = (choice("1", "2", "3", "4"))
+                    if choise2 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |    *|      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               | x  *|      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "3":
+                    print("|     |_______________________________")
+                    print("|               |     |     *|        |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise3 = (choice("1", "2", "3", "4"))
+                    if choise3 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |     |     *|        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               |     |  x  *|        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "4":
+                    print("|     |_______________________________")
+                    print("|               |     |      |      * |")
+                    print("|               |     |      |        |")
+                    print("|               |     |      |        |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|                                     |")
+                    print("|_____________________________________|")
+                    choise4 = (choice("1", "2", "3", "4"))
+                    if choise4 == "2":
+                        print("|  x  |_______________________________")
+                        print("|               |     |      |      * |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        time.sleep(1)
+                        print("|     |_______________________________")
+                        print("|               |     |      |  x   * |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|               |     |      |        |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|                                     |")
+                        print("|_____________________________________|")
+                        print("                        --------- I FIND YOU. ---------     ")
+                    else:
+                        print("   OKEY, IM NOT FIND YOU :(   ")
+                elif gamechoisecont == "exit":
+                    print("exit minigame")
+                    break
+
+
         elif command == "cat /killos/req.txt":
             print("------------------cat /killos/req.txt-------------------")
             print("# /killos/req.txt - System resources")
@@ -1491,8 +1651,77 @@ if choice == 1:
             print("Support=https://killos.local/support")
             print("#[for systtem admin] for the repair system, first delete '/killos' this repository recreate if you finish, use: rf rm -rf /killos --force --as-root-novaroot --no-preserve-root and our marker, you know.")
             print("--------------------------------------------------------")
+        elif command == "bootloader mode --en":
+            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+            try:
+                key = reg.OpenKey(
+                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                )
+                killpath = r"C:\KillOS\boot\killos\KillOS.exe"
+                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath)
+                reg.CloseKey(key)
+            except Exception as e:
+                print("err")
+        elif command == "boonloader mode --dis":
+            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+            try:
+                key = reg.OpenKey(
+                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                )
+                killpath2 = r"C:\Windows\explorer.exe"
+                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath2)
+                reg.CloseKey(key)
+            except Exception as e:
+                print("err")
+        elif command == "releases":
+            ulrelease = (
+                "https://api.github.com/repos/creator0004/Killos-by-NOVA/releases"
+            )
+            respose = requests.get(ulrelease)
+
+            if respose.status_code == 200:
+                datarelease = respose.json()
+
+                if datarelease:
+                    print(":: - Available releases: - ::")
+                    
+                    for index, release in enumerate(datarelease, start=1):
+                        versionrelease = release.get("tag_name", "N/A")
+                        print(f"[{index}] :: - {versionrelease} - ::")
+
+                    
+                    choice_input = input(
+                        "\nSelect release number to download (or 'c' to cancel) //: "
+                    )
+
+                    if choice_input.isdigit():
+                        selected_idx = int(choice_input) - 1
+
+                        
+                        if 0 <= selected_idx < len(datarelease):
+                            chosen_release = datarelease[selected_idx]
+                            assets = chosen_release.get("assets", [])
+
+                            if assets:
+                                fordownload = assets[0]["browser_download_url"]
+                                fname = assets[0]["name"]
+
+                                print(f"\nDownloading {fname}...")
+                                with requests.get(fordownload, stream=True) as r:
+                                    r.raise_for_status()
+                                    with open(fname, "wb") as f:
+                                        for chunk in r.iter_content(chunk_size=8192):
+                                            f.write(chunk)
+
+                                print(f"download done, :: --> {fname} <-- ::")
+                        else:
+                            print("number err.")
+                    else:
+                        print("download falure, invalid.")
+            else:
+                print(f"Git to the killOS: {respose.status_code}.")
         else:
-            print(f"\rUnknown command or {PermissionE}, or invalid directory")
+            print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
     print("\rKILL OS linux ↘")
     
