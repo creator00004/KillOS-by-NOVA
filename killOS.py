@@ -61,6 +61,7 @@ sysinfo = {
 novacontactmail = "nova@killos.org"
 rootdir = Path("C:/killOS")
 filesystem = [
+    rootdir / "releases",
     rootdir / "boot" / "killos",
     rootdir / "boot" / "mnt",
     rootdir / "mnt",
@@ -292,8 +293,8 @@ if choice == 1:
             print("\r 47 bootloader mode")
             print("\r 49 minigame")
             print("\r 50 releases")
-            print("\r 51 boonloader mode --dis")
-            print("\r 52 boonloader mode --en")
+            print("\r 51 bootloader mode --dis")
+            print("\r 52 bootloader mode --en")
             
             
 
@@ -1662,7 +1663,7 @@ if choice == 1:
                 reg.CloseKey(key)
             except Exception as e:
                 print("err")
-        elif command == "boonloader mode --dis":
+        elif command == "bootloader mode --dis":
             kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
             try:
                 key = reg.OpenKey(
@@ -1675,7 +1676,7 @@ if choice == 1:
                 print("err")
         elif command == "releases":
             ulrelease = (
-                "https://api.github.com/repos/creator0004/Killos-by-NOVA/releases"
+    "https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases"
             )
             respose = requests.get(ulrelease)
 
@@ -1683,13 +1684,12 @@ if choice == 1:
                 datarelease = respose.json()
 
                 if datarelease:
-                    print(":: - Available releases: - ::")
+                    print(":: releases: ::")
                     
                     for index, release in enumerate(datarelease, start=1):
                         versionrelease = release.get("tag_name", "N/A")
                         print(f"[{index}] :: - {versionrelease} - ::")
 
-                    
                     choice_input = input(
                         "\nSelect release number to download (or 'c' to cancel) //: "
                     )
@@ -1705,15 +1705,15 @@ if choice == 1:
                             if assets:
                                 fordownload = assets[0]["browser_download_url"]
                                 fname = assets[0]["name"]
-
+                                fulldir = sys.path(rootdir / "releases" / fname)
                                 print(f"\nDownloading {fname}...")
                                 with requests.get(fordownload, stream=True) as r:
                                     r.raise_for_status()
-                                    with open(fname, "wb") as f:
+                                    with open(fulldir, "wb") as f:
                                         for chunk in r.iter_content(chunk_size=8192):
                                             f.write(chunk)
 
-                                print(f"download done, :: --> {fname} <-- ::")
+                                print(f"download done, :: --> {fname} <-- ::, release will saves in /releases (if windows, in C:/killOS/releases)")
                         else:
                             print("number err.")
                     else:
