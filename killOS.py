@@ -42,12 +42,14 @@ class system_permisson:
 def function1():
     print("")
     if usercustom.username == "root":
+        time.sleep(100)
         print("you are in 'root', recommended to work under you own user")
         print("create your user with 'useradd'")
     else:
         pass
 
 def function2():
+    time.sleep(100)
     print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
 def sup():
             print(" _____________________________________________")
@@ -103,7 +105,7 @@ def WYKOM():
 
 def thead_func():
     while True:
-        time.sleep(random.randint(1, 235))
+        time.sleep(random.randint(1060, 6705))
         random.choice([function1, function2])()
         
 background_activity = threading.Thread(target=thead_func, daemon=True)
@@ -156,6 +158,7 @@ if not sett.exists():
 session_time = time.time()
 error = "KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e"
 DNS = 1111, 8080
+perflag = False
 yayactive = False
 googleinstall = False
 directory = ""
@@ -208,6 +211,217 @@ key = "NOVA-543-NOVA"
 #active daemons
 background_activity.start()
 
+the_final = '''
+from binascii import a2b_qp
+from logging import root
+from math import e
+import platform
+import shutil
+import subprocess
+import time
+import locale
+import psutil
+import sys
+import threading
+import os
+import requests
+import getpass
+import webbrowser
+import pyautogui
+import random
+from colorama import *
+import winsound
+from pathlib import Path
+import winreg as reg
+import sys
+
+class usercreate:
+    def __init__(self, username, usermode, password):
+        self.username = username
+        self.usermode = usermode
+        self.password = password
+
+class userfilesystemPermission:
+    def __init__(self, userType, PermissionUser):
+        self.userType = userType
+        self.PermissionUser = PermissionUser
+
+class system_permisson:
+    def __init__(self, permission, object, nova_rate):
+        self.permission = permission
+        self.object = object
+        self.nova_rate = nova_rate
+
+
+def function1():
+    print("")
+    if usercustom.username == "root":
+        time.sleep(100)
+        print("you are in 'root', recommended to work under you own user")
+        print("create your user with 'useradd'")
+    else:
+        pass
+
+def function2():
+    time.sleep(100)
+    print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
+def sup():
+            print(" _____________________________________________")
+            print("|  K1LLM3NU (super)                           |")
+            print("|_____________________________________________|")
+            print("| 1. dolphin                                  |")
+            print("| 2. shutdown                                 |")
+            print("| 3. sudo useradd                             |")
+            print("| 4. kill os                                  |")
+            print("|                                             |")
+            print("|_____________________________________________|")
+            print("  :: enter only number")
+            superi = input("/killmenu@/ ")
+            if superi == "1":
+                print("\rStarting dolphin file manager...")
+                time.sleep(1)
+                subprocess.run(["explorer.exe"])
+            elif superi == "2":
+                os.system("shutdown /s /t 0")
+            elif superi == "3":
+                username = input(" -m -g users -G wheel -s /bin/bash ")
+                usercustom = usercreate(username, 0, password)
+                user = username
+                password = input("sudo passwd: ")
+                time.sleep(1)
+                print(f"\rUser {username} created successfully.")
+            elif superi == "4":
+                print("\r                linux: killOS")
+                print(f"\r $$\   $$\               CPU: {cpu}")
+                print(f"\r $$ | $$  |                RAM: {ram}")
+                print(f"\r $$ |$$  /                  GPU: {gpu}")
+                print(f"\r $$$$$  /                   found users in umounted partition: {us}")
+                print(f"\r $$  $$<                   found locale: {loc}")
+                print("\r  $$ |\$$\                 ")
+                print("\r  $$ | \$$\                console: bash")
+                print("\r  \__|  \__|")
+
+def WYKOM():
+    print(" you are:")
+    print(usercustom)
+    print(" you have:")
+    print(cpu)
+    print(f"{ram} G of RAM")
+    print(gpu)
+    print("you communicate on: ")
+    print(loc)
+    print("you password is:")
+    print(usercustom.password)
+    print("you are name:")
+    print(name_machine)
+    print("microsoft:")
+    print(mail)
+
+def thead_func():
+    while True:
+        time.sleep(random.randint(1060, 6705))
+        random.choice([function1, function2])()
+        
+background_activity = threading.Thread(target=thead_func, daemon=True)
+
+#data
+name_machine = getpass.getuser()
+all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+cpu = platform.processor()
+mail = f{name_machine}@microsofT.account
+ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
+gpu = subprocess.getoutput('powershell Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name').strip()
+loc = locale.getdefaultlocale()[0]
+us = os.getlogin()
+user = root
+usermodee = [0, 1, 2, 3, 4]
+if user == root:
+    usermode = 1
+else:
+    usermode = 0
+User = usercreate("root", usermode, 123321)
+User.username = user
+usercustom = User
+textcreate = 
+sysinfo = {
+    "CPU": f{cpu},
+    "RAM": f{ram},
+    "GPU": f{gpu},
+    "OS": "KILL OS (linux)"
+}
+novacontactmail = nova@killos.org
+rootdir = Path(C:/killOS)
+filesystem = [
+    rootdir / releases,
+    rootdir / boot / killos,
+    rootdir / boot / mnt,
+    rootdir / mnt,
+    rootdir / setup,
+    rootdir / root,
+    rootdir / etc,
+    rootdir / killos / mnt,
+    rootdir / lib,
+    rootdir / pacman]
+for folder in filesystem:
+    folder.mkdir(parents=True, exist_ok=True)
+forboot = Path(sys.argv[0]).resolve()
+forbootdir = rootdir / boot / killos
+sett = forbootdir / forboot.name
+if not sett.exists():
+    shutil.copy2(forboot, sett)
+session_time = time.time()
+error = KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e
+DNS = 1111, 8080
+perflag = False
+yayactive = False
+googleinstall = False
+directory = 
+lib_list = 
+systemversion = KILL OS 3.1 Arch Linux 7.2.3.arch1-3
+googleflag = False
+coreflag = False
+killos32flag = False
+filesystemkillos = packets, pacman, mnt, core.conf, killos.sh, Not for read, req.txt
+PermissionE = Permission denied.
+id = 1root
+killosfilesystem = userdefaultPermission = userfilesystemPermission(1root, 1)
+statusconf = False
+usercustom = usercreate(root, 1, 123321)
+permissionnovafileactions = False
+cdboot = False
+ss = 
+                 uuuuuuu
+             uu$$$$$$$$$$$uu
+          uu$$$$$$$$$$$$$$$$$uu
+         u$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$"   "$$$"   "$$$$$$u
+       "$$$$"      u$u       $$$$"
+        $$$u       u$u       u$$$
+        $$$u      u$$$u      u$$$
+         "$$$$uu$$$   $$$uu$$$$"
+          "$$$$$$$"   "$$$$$$$"
+            u$$$$$$$u$$$$$$$u
+             u$"$"$"$"$"$"$u
+  uuu        $$u$ $ $ $ $u$$       uuu
+ u$$$$        $$$$$u$u$u$$$       u$$$$
+  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+ """      ""$$$$$$$$$$$uu ""$"""
+           uuuu ""$$$$$$$$$$uuu
+  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+  $$$$$$$$$$""""           ""$$$$$$$$$$$"
+   "$$$$$"                      ""$$$$""
+     $$$"                         $$$$"
+
+bootflag = False
+key = 'NOVA-543-NOVA'
+
+#active daemons
+background_activity.start()'''
 
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
 for i in range(30):
@@ -375,6 +589,7 @@ if choice == 1:
             print("\r 53 DE")
             print("\r 54 killos -wykom (killos what you know of me)")
             print("\r 55 NOVA Private Subscription (or 'NPS')")
+            print("\r 56 nova permission (or 'np')")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
@@ -1100,10 +1315,17 @@ if choice == 1:
             print(" services_enabled = killos-core, killosnetwork")
             print("------------------------------------------------------------")
         elif command == "cat /killos/killos.sh":
-            cat = system_permisson(4,"cat", 4)
-            if cat.permission == 4:
-                print("cat:")
-                print(f"     error, killos.sh No such file or directory< {PermissionE}")
+            if perflag == False:
+                cat = system_permisson(4,"cat", 4)
+                if cat.permission == 4:
+                    print("cat:")
+                    print(f"     error, killos.sh No such file or directory< {PermissionE}")
+            else:
+                print("------------------cat /killos/killos.sh-------------------")
+                print(the_final, "...")
+                print("------------------------------------------------------------")
+                print("you... win")
+                
         elif command == "ls -l /killos/killos.sh":
             print("\r-rw-r--r-- 1 root system_component 27262976 -- --:-- killos.sh")
         elif command == "file /killos/killos.sh":
@@ -1605,7 +1827,7 @@ if choice == 1:
                     print("|                                     |")
                     print("|                                     |")
                     print("|_____________________________________|")
-                    choise = (choice("1", "2", "3", "4"))
+                    choise = (random.choice(["1", "2", "3", "4"]))
                     if choise == "1":
                         print("|  x  |_______________________________")
                         print("|        *      |     |      |        |")
@@ -1636,7 +1858,7 @@ if choice == 1:
                     print("|                                     |")
                     print("|                                     |")
                     print("|_____________________________________|")
-                    choise2 = (choice("1", "2", "3", "4"))
+                    choise2 = (random.choice(["1", "2", "3", "4"]))
                     if choise2 == "2":
                         print("|  x  |_______________________________")
                         print("|               |    *|      |        |")
@@ -1667,7 +1889,7 @@ if choice == 1:
                     print("|                                     |")
                     print("|                                     |")
                     print("|_____________________________________|")
-                    choise3 = (choice("1", "2", "3", "4"))
+                    choise3 = (random.choice(["1", "2", "3", "4"]))
                     if choise3 == "2":
                         print("|  x  |_______________________________")
                         print("|               |     |     *|        |")
@@ -1698,7 +1920,7 @@ if choice == 1:
                     print("|                                     |")
                     print("|                                     |")
                     print("|_____________________________________|")
-                    choise4 = (choice("1", "2", "3", "4"))
+                    choise4 = (random.choice(["1", "2", "3", "4"]))
                     if choise4 == "2":
                         print("|  x  |_______________________________")
                         print("|               |     |      |      * |")
@@ -1784,11 +2006,12 @@ if choice == 1:
                             if assets:
                                 fordownload = assets[0]["browser_download_url"]
                                 fname = assets[0]["name"]
-                                fulldir = sys.path(rootdir / "releases" / fname)
+                                
                                 print(f"\nDownloading {fname}...")
                                 with requests.get(fordownload, stream=True) as r:
                                     r.raise_for_status()
-                                    with open(fulldir, "wb") as f:
+                                fulldir = sys.path(rootdir / "releases" / fname)
+                                with open(fulldir, "wb") as f:
                                         for chunk in r.iter_content(chunk_size=8192):
                                             f.write(chunk)
 
@@ -1850,6 +2073,36 @@ if choice == 1:
                 elif choeice == 2:
                     print(error)
                     print("thanks for your purchase")
+        elif command in ("nova permission", "np"):
+            print(":: NOVA permission ::")
+            print("enter key nova:")
+            npskey = input("key: ")
+            if npskey == "NOVA-543-NOVA":
+                print("1/4 okey, enter the special root passw:")
+                rootpass = input("root pass: ")
+                if rootpass == "123321":
+                    print("2/4 okey, enter nova email:")
+                    getmail = input("nova email: ")
+                    if getmail == novacontactmail:
+                        print("3/4 okey, enter password image for nova workers:")
+                        passimage = input("password image: ")
+                        if passimage == "killos-767-2026-09-15":
+                            print("4/4 okey, OKEY.")
+                            print("4/5 okey, enter the special marker for nova workers:")
+                            marker = input("marker: ")
+                            if marker == "--nova@killos-call-try='systemcomponent'":
+                                print("5/5 okey, you have permission.")
+                                perflag = True
+                            else:
+                                print("invalid marker.")
+                        else:
+                            print("invalid password image.")
+                    else:
+                        print("invalid email.")
+                else:
+                    print("invalid root passw.")
+            else:
+                print("invalid key.")
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
