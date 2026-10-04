@@ -8,8 +8,10 @@ import time
 import locale
 import psutil
 import sys
+import threading
 import os
 import requests
+import getpass
 import webbrowser
 import pyautogui
 import random
@@ -36,8 +38,81 @@ class system_permisson:
         self.object = object
         self.nova_rate = nova_rate
 
+
+def function1():
+    print("")
+    if usercustom.username == "root":
+        print("you are in 'root', recommended to work under you own user")
+        print("create your user with 'useradd'")
+    else:
+        pass
+
+def function2():
+    print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
+def sup():
+            print(" _____________________________________________")
+            print("|  K1LLM3NU (super)                           |")
+            print("|_____________________________________________|")
+            print("| 1. dolphin                                  |")
+            print("| 2. shutdown                                 |")
+            print("| 3. sudo useradd                             |")
+            print("| 4. kill os                                  |")
+            print("|                                             |")
+            print("|_____________________________________________|")
+            print("  :: enter only number")
+            superi = input("/killmenu@/ ")
+            if superi == "1":
+                print("\rStarting dolphin file manager...")
+                time.sleep(1)
+                subprocess.run(["explorer.exe"])
+            elif superi == "2":
+                os.system("shutdown /s /t 0")
+            elif superi == "3":
+                username = input(" -m -g users -G wheel -s /bin/bash ")
+                usercustom = usercreate(username, 0, password)
+                user = username
+                password = input("sudo passwd: ")
+                time.sleep(1)
+                print(f"\rUser {username} created successfully.")
+            elif superi == "4":
+                print("\r                linux: killOS")
+                print(f"\r $$\   $$\               CPU: {cpu}")
+                print(f"\r $$ | $$  |                RAM: {ram}")
+                print(f"\r $$ |$$  /                  GPU: {gpu}")
+                print(f"\r $$$$$  /                   found users in umounted partition: {us}")
+                print(f"\r $$  $$<                   found locale: {loc}")
+                print("\r  $$ |\$$\                 ")
+                print("\r  $$ | \$$\                console: bash")
+                print("\r  \__|  \__|")
+
+def WYKOM():
+    print(" you are:")
+    print(usercustom)
+    print(" you have:")
+    print(cpu)
+    print(f"{ram} G of RAM")
+    print(gpu)
+    print("you communicate on: ")
+    print(loc)
+    print("you password is:")
+    print(usercustom.password)
+    print("you are name:")
+    print(name_machine)
+    print("microsoft:")
+    print(mail)
+
+def thead_func():
+    while True:
+        time.sleep(random.randint(1, 235))
+        random.choice([function1, function2])()
+        
+background_activity = threading.Thread(target=thead_func, daemon=True)
+
 #data
+name_machine = getpass.getuser()
+all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
 cpu = platform.processor()
+mail = f"{name_machine}@microsofT.account"
 ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
 gpu = subprocess.getoutput('powershell "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"').strip()
 loc = locale.getdefaultlocale()[0]
@@ -130,6 +205,8 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
 bootflag = False
 key = "NOVA-543-NOVA"
 
+#active daemons
+background_activity.start()
 
 
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
@@ -293,9 +370,14 @@ if choice == 1:
             print("\r 47 bootloader mode")
             print("\r 49 minigame")
             print("\r 50 releases")
-            print("\r 51 bootloader mode --dis")
-            print("\r 52 bootloader mode --en")
-            
+            print("\r 51 bootloader mode --dis ")
+            print("\r 52 bootloader mode --en ")
+            print("\r 53 DE")
+            print("\r 54 killos -wykom (killos what you know of me)")
+            print("\r 55 NOVA Private Subscription (or 'NPS')")
+            print("\r ")
+            print("\r ")
+            print("\r 0 super (or 'sp')")
             
 
         elif command == "lsblk":
@@ -688,7 +770,7 @@ if choice == 1:
             print(f"{Fore.GREEN}[ ✓ ] unmounting /nvme0n1p1")
             print(f"{Fore.WHITE}")
             time.sleep(3)
-            exit()
+            os.system("shutdown /s /t 0")
         elif command == "reboot":
             print("\rRebooting...")
             time.sleep(3)
@@ -702,6 +784,7 @@ if choice == 1:
             print("\r[  ] mounting /boot/killos")
             print("\r[  ] mounting /nvme0n1p1")
             time.sleep(3)
+            os.system("shutdown /r /t 0")
             
         elif command == "sudo useradd":
             print("\rsudo useradd")
@@ -1641,8 +1724,6 @@ if choice == 1:
                 elif gamechoisecont == "exit":
                     print("exit minigame")
                     break
-
-
         elif command == "cat /killos/req.txt":
             print("------------------cat /killos/req.txt-------------------")
             print("# /killos/req.txt - System resources")
@@ -1661,6 +1742,8 @@ if choice == 1:
                 killpath = r"C:\KillOS\boot\killos\KillOS.exe"
                 reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath)
                 reg.CloseKey(key)
+                print("you pc will shutdown, YOU HAVE 10 SEC")
+                os.system("shutdown /s /t 10")
             except Exception as e:
                 print("err")
         elif command == "bootloader mode --dis":
@@ -1675,24 +1758,20 @@ if choice == 1:
             except Exception as e:
                 print("err")
         elif command == "releases":
-            ulrelease = (
-    "https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases"
-            )
+            ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
             respose = requests.get(ulrelease)
 
             if respose.status_code == 200:
                 datarelease = respose.json()
 
                 if datarelease:
-                    print(":: releases: ::")
+                    print(":: releases: :: ")
                     
                     for index, release in enumerate(datarelease, start=1):
                         versionrelease = release.get("tag_name", "N/A")
                         print(f"[{index}] :: - {versionrelease} - ::")
 
-                    choice_input = input(
-                        "\nSelect release number to download (or 'c' to cancel) //: "
-                    )
+                    choice_input = input("\nselect release number for download (or 'c' to cancel) //: ")
 
                     if choice_input.isdigit():
                         selected_idx = int(choice_input) - 1
@@ -1720,6 +1799,57 @@ if choice == 1:
                         print("download falure, invalid.")
             else:
                 print(f"Git to the killOS: {respose.status_code}.")
+        elif command in ("super", "sp"):
+            sup()
+        elif command == "DE":
+            all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+            print("-------------------------------------------------------------")
+            print(f"\ryou can open: {all}")
+            print("\renter name for open (or 'c' to cancel, or 'super' to k1llm3nu)")
+            print("---------------------------<super>---------------------------")
+            deInput = input("/: ")
+            if deInput.lower() == "c":
+                print("\rok")
+            elif deInput in all:
+                os.startfile(os.path.expanduser("~"), "Desktop", deInput)
+            elif deInput == "super":
+                sup()
+        elif command == "killos -wykom":
+            WYKOM()
+        elif command in ("NOVA Private Subscription", "NPS"):
+            print(":: NOVA Private Subscription ::")
+            print("policy: you must have a KEY to activate/install killOS, this key you get in the NOVA store, or in the NOVA official website.")
+            npskey = input("key: ")
+            if npskey == "NOVA-543-NOVA":
+                print("installing...")
+                time.sleep(3)
+                print("installing...done")
+                print("rebooting...")
+                time.sleep(2)
+                print("\033[H\033[J", end="")
+                print("\nRunning system...")
+                time.sleep(1)
+                print("System run.")
+                print(f"{Fore.RED} $$\   $$\ $$$$$$\ $$\       $$\              $$$$$$\   $$$$$$\  ")
+                print(f"{Fore.RED} $$ | $$  |\_$$  _|$$ |      $$ |            $$  __$$\ $$  __$$\ ")
+                print(f"{Fore.RED} $$ |$$  /   $$ |  $$ |      $$ |            $$ /  $$ |$$ /  \__|")
+                print(f"{Fore.RED} $$$$$  /    $$ |  $$ |      $$ |  --------  $$ |  $$ |\$$$$$$\  ")
+                print(f"{Fore.RED} $$  $$<     $$ |  $$ |      $$ |            $$ |  $$ | \____$$\ ")
+                print(f"{Fore.RED} $$ |\$$\    $$ |  $$ |      $$ |            $$ |  $$ |$$\   $$ |")
+                print(f"{Fore.RED} $$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\        $$$$$$  |\$$$$$$  |")
+                print(f"{Fore.RED} \__|  \__|\______|\________|\________|       \______/  \______/ ")
+                print(f"{Fore.WHITE}")
+                print(" KILL OS linux menu. os based linux")
+
+                print("\r sectors: boot, home")
+                print("\r 1: boot 2: home")
+                choeice = int(input("\rsector?/: "))
+                if choeice == 1:
+                    print(error)
+                    print("thanks for your purchase")
+                elif choeice == 2:
+                    print(error)
+                    print("thanks for your purchase")
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
