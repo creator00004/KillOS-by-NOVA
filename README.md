@@ -1,6 +1,7 @@
-------------PASSWORD AND KEY------------
+------------PASSWORD AND KEY AND WORKER KEY------------
 "123321" 
 "NOVA-543-NOVA"
+"killos-767-2026-09-15"
 ------------INFORMATION---------
 hello, This is my first open source project,
 1200+ lines of code, 75000+ characters,
