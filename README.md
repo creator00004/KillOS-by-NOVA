@@ -12,3 +12,8 @@ and also creates a file structure on the disk.
 The game will try to scare you at some points.
 The game is not malware.
 All details are made for better immersion in the simulation of the Linux-based operating system
+
+-----------------WARNING-------------------
+the simulator use some your real data,
+for the immersion improvements,
+program dont have malicious code, you can see the code in the "KillOS.py"
