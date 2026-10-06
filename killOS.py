@@ -10,6 +10,7 @@ import psutil
 import sys
 import threading
 import os
+import customtkinter as ctk
 import requests
 import getpass
 import webbrowser
@@ -125,6 +126,12 @@ if user == "root":
     usermode = 1
 else:
     usermode = 0
+ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
+respose = requests.get(ulrelease)
+datarelease = respose.json()
+for index, release in enumerate(datarelease, start=1):
+    versionrelease = release.get("tag_name", "N/A")
+
 User = usercreate("root", usermode, 123321)
 User.username = user
 usercustom = User
@@ -590,6 +597,8 @@ if choice == 1:
             print("\r 54 killos -wykom (killos what you know of me)")
             print("\r 55 NOVA Private Subscription (or 'NPS')")
             print("\r 56 nova permission (or 'np')")
+            print("\r 57 pacman -S DE-x11")
+            print("\r 58 DE --x11")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
@@ -2103,6 +2112,130 @@ if choice == 1:
                     print("invalid root passw.")
             else:
                 print("invalid key.")
+        elif command == "pacman -S DE-x11":
+            if yayactive == False:
+            
+                    print("\r packets (1) DE-x11,")
+                    print("\r                                          ")
+                    print("\r size of download: 1G")
+                    print("\r size of download: 0.3G")
+                    print("\r                                          ")
+                    print("\rdownload? (y/n)")
+                    print("\ry")
+                    print("\r :: download packets (1)")
+                    print("\r :: (0/1) download")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r                                            ")
+                    print("\r[                                                ] DE-x11")
+                    time.sleep(3)
+                    print("\r[####                                            ] DE-x11")
+                    time.sleep(3)
+                    print("\r[########                                        ] DE-x11")
+                    time.sleep(3)
+                    print("\r[################################                ] DE-x11")
+                    time.sleep(2)
+                    print("\r[################################################] DE-x11")
+                    time.sleep(4)
+                    print("\r :: (2/2) download")
+                    print("\r :: open post-transaction hooks...")
+                    time.sleep(3)
+            else:
+                                            print("$ yay -S Syu")
+                                            print(f"{Fore.GREEN}➔ AUR Packages (2): DE-x11, x11")
+                                            print(f"{Fore.WHITE}")
+                                            time.sleep(1)
+                                            print("1 AUR Packages: DE-x11, x11")
+                                            time.sleep(3)
+                                            print(f"{Fore.GREEN}:: (1/2) Downloaded PKGBUILD: DE-x11")
+                                            print(f"{Fore.GREEN}:: (2/2) Downloaded PKGBUILD: x11")
+                                            print(f"{Fore.WHITE}")
+                                            print("➔ Diffs to show?")
+                                            choice = input("[N]one [A]ll (default=N): ")
+                                            if choice == "A":
+                                                print(f"{Fore.GREEN}:: (2/2) Parsing SRCINFO: DE-x11, x11")
+                                                print(f"{Fore.WHITE}")
+                    
+                                                print("Evaluating dirty packages...")
+                                                print(f"==> Making package: DE-x11 ({session_time}, 2026)")
+                                                print(f"==> Making package: DE-x11 ({session_time}, 2026)")
+                                                print("==> Checking runtime dependencies...")
+                                                print("==> Checking buildtime dependencies...")
+                                                print("==> Retrieving sources...")
+                                                print("  -> Downloading DE-x11, x11...")
+                                                time.sleep(4)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("30  40M  30  107M    0     0  22.4M      0  0:00:01  0:00:04 01:--:04 24.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("70  69M  70  107M    0     0  22.4M      0  0:00:02  0:00:04 02:--:04 25.1M")
+                                                time.sleep(1)
+                                                print("  -> Downloading DE-x11, x11...")
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("80  80M  80  107M    0     0  22.4M      0  0:00:03  0:00:04 03:--:04 24.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("99  101M  99  107M    0     0  22.4M      0  0:00:04  0:00:03 --:--:-- 25.1M")
+                                                time.sleep(1)
+                                                print("  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current")
+                                                print("                                 Dload  Upload   Total   Spent    Left  Speed")
+                                                print("100  101M  100  107M    0     0  22.4M      0  0:00:04  0:00:04 --:--:-- 25.1M")
+                                                time.sleep(1)
+                                                markerde = True
+            markerde = True
+        elif command == "DE --x11":
+            print(" :: start de with x11")
+            if markerde == True:
+                def clss():
+                    dewin.destroy()
+                    print("white anything.")
+                def killos():
+                    kilcommand = ctk.CTk()
+                    kilcommand.title("DE output")
+                    kilcommand.geometry("600x500")
+                    kilcommand.configure(fg_color="black")
+                    kilcommand.resizable(False, False)
+
+                    output1 = ctk.CTkLabel(kilcommand, text=f"linux: killOS\n CPU: {cpu}\n RAM: {ram}\n GPU: {gpu}\n found users in umounted partition: {us}\n found locale: {loc}", font=("consolas", 19), text_color="white")
+                    output1.pack(pady=10)
+                    kilcommand.mainloop()
+                def gch():
+                    webbrowser.open("https://www.google.com/")
+                def dolphin():
+                    subprocess.run(["explorer.exe"])
+                time.sleep(0.5)
+                if markerde == True:
+                    dewin = ctk.CTk()
+                    dewin.title("KILL OS linux DE-x11")
+                    dewin.attributes("-fullscreen", True)
+                    dewin.configure(fg_color="black")
+
+                    labl = ctk.CTkLabel(dewin, text="KILL OS DE-x11, func:", font=("consolas", 19), text_color="white")
+                    labl.pack(pady=10)
+                    btn1 = ctk.CTkButton(dewin, text="kill os", command=killos, font=("consolas", 19), text_color="white")
+                    btn1.pack(pady=10)
+                    btn2 = ctk.CTkButton(dewin, text="google-chrome", command=gch, font=("consolas", 19), text_color="white")
+                    btn2.pack(pady=10)
+                    btn4 = ctk.CTkButton(dewin, text="dolphin", command=dolphin, font=("consolas", 19), text_color="white")
+                    btn4.pack(pady=10)
+                    btn3 = ctk.CTkButton(dewin, text="exit", command=clss, font=("consolas", 19), text_color="white")
+                    btn3.pack(padx=300, pady=10)
+                    dewin.mainloop()
+            else:
+                print("DE-x11 not found, use: pacman -S DE-x11")
+        
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
