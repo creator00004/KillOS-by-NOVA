@@ -597,8 +597,8 @@ if choice == 1:
             print("\r 54 killos -wykom (killos what you know of me)")
             print("\r 55 NOVA Private Subscription (or 'NPS')")
             print("\r 56 nova permission (or 'np')")
-            print("\r 57 pacman -S DE-x11")
-            print("\r 58 DE --x11")
+            print("\r 57 pacman -S DE --x11 Ø | broken |")
+            print("\r 58 DE --x11 Ø | broken |")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
@@ -2195,52 +2195,11 @@ if choice == 1:
                                                 time.sleep(1)
                                                 markerde = True
             markerde = True
-        elif command == "DE --x11":
-            print(" :: start de with x11")
-            if markerde == True:
-                def clss():
-                    dewin.destroy()
-                    print("white anything.")
-                def killos():
-                    kilcommand = ctk.CTk()
-                    kilcommand.title("DE output")
-                    kilcommand.geometry("600x500")
-                    kilcommand.configure(fg_color="black")
-                    kilcommand.resizable(False, False)
-
-                    output1 = ctk.CTkLabel(kilcommand, text=f"linux: killOS\n CPU: {cpu}\n RAM: {ram}\n GPU: {gpu}\n found users in umounted partition: {us}\n found locale: {loc}", font=("consolas", 19), text_color="white")
-                    output1.pack(pady=10)
-                    kilcommand.mainloop()
-                def gch():
-                    webbrowser.open("https://www.google.com/")
-                def dolphin():
-                    subprocess.run(["explorer.exe"])
-                time.sleep(0.5)
-                if markerde == True:
-                    dewin = ctk.CTk()
-                    dewin.title("KILL OS linux DE-x11")
-                    dewin.attributes("-fullscreen", True)
-                    dewin.configure(fg_color="black")
-
-                    labl = ctk.CTkLabel(dewin, text="KILL OS DE-x11, func:", font=("consolas", 19), text_color="white")
-                    labl.pack(pady=10)
-                    btn1 = ctk.CTkButton(dewin, text="kill os", command=killos, font=("consolas", 19), text_color="white")
-                    btn1.pack(pady=10)
-                    btn2 = ctk.CTkButton(dewin, text="google-chrome", command=gch, font=("consolas", 19), text_color="white")
-                    btn2.pack(pady=10)
-                    btn4 = ctk.CTkButton(dewin, text="dolphin", command=dolphin, font=("consolas", 19), text_color="white")
-                    btn4.pack(pady=10)
-                    btn3 = ctk.CTkButton(dewin, text="exit", command=clss, font=("consolas", 19), text_color="white")
-                    btn3.pack(padx=300, pady=10)
-                    dewin.mainloop()
-            else:
-                print("DE-x11 not found, use: pacman -S DE-x11")
-        
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
     print("\rKILL OS linux ↘")
-    
+
     print(f"\r CPU: {cpu}")
     print(f"\r RAM: {ram}")
     print(f"\r GPU: {gpu}")
