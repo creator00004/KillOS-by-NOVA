@@ -2270,12 +2270,12 @@ if choice == 1:
                 novamail = f"{usname.strip().lower()}@novaccount.com"
                 try:
                     response = supabase.auth.sign_in_with_password({"email": novamail, "password": novacontactinputpasswd,})
-                    user = response.user
-                    if user:
+                    userreq = response.user
+                    if userreq:
                         time.sleep(2)
                         print("\033[H\033[J", end="")
                         print("welcome back, user. nice to see you.")
-                        newus = user
+                        newus = userreq
                     else:
                         print("err")
                 except Exception as e:
