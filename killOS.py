@@ -2295,7 +2295,7 @@ if choice == 1:
                 if newus == "":
                     print("you dont have nova account> create account in 'NOVAccount'")
                 else:
-                    print(f"you account: {newus.username}, email: {newus.email}, id: {newus.id}, verified: {newus.email_confirmed_at} ✓")
+                    print(f"you have account, 0 proof")
             except Exception as e:
                 print(f"you dont have account. or err {e}")
         elif command == "version --max":
