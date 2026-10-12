@@ -2302,6 +2302,7 @@ if choice == 1:
             print(f"KILL OS linux max version: {requests.get('https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases/latest').json()['tag_name']}")
         elif command == "NOVANetwork --chat":
             print("------------ NOVANetwork, chat for people from different countries, but users of KillOS ------------")
+            print("'exit' to exit")
             if not newus:
                 print("you don't have nova account> create account in 'NOVAccount'")
             else:
