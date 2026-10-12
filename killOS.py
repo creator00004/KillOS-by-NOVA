@@ -10,7 +10,7 @@ import psutil
 import sys
 import threading
 import os
-import customtkinter as ctk
+from supabase import *
 import requests
 import getpass
 import webbrowser
@@ -21,6 +21,7 @@ import winsound
 from pathlib import Path
 import winreg as reg
 import sys
+
 
 class usercreate:
     def __init__(self, username, usermode, password):
@@ -126,12 +127,13 @@ if user == "root":
     usermode = 1
 else:
     usermode = 0
+supabase: Client = create_client("https://qqpsevxwdrkkzovgjzet.supabase.co", "sb_publishable_bPuaZflzw7e2QZLJBuPEUQ_uhZASJWj")
+newus = ""
 ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
 respose = requests.get(ulrelease)
 datarelease = respose.json()
 for index, release in enumerate(datarelease, start=1):
     versionrelease = release.get("tag_name", "N/A")
-
 User = usercreate("root", usermode, 123321)
 User.username = user
 usercustom = User
@@ -599,6 +601,11 @@ if choice == 1:
             print("\r 56 nova permission (or 'np')")
             print("\r 57 pacman -S DE --x11 Ø | broken |")
             print("\r 58 DE --x11 Ø | broken |")
+            print("\r 59 NOVAccount (nova account)")
+            print("\r 60 getaccount")
+            print("\r 61 getaccount --delete")
+            print("\r 62 version --max")
+            print("\r 63 NOVANetwork --chat")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
@@ -2195,6 +2202,141 @@ if choice == 1:
                                                 time.sleep(1)
                                                 markerde = True
             markerde = True
+        elif command in ("NOVAccount", "nova acccount"):
+            print("------------------NOVAccount-------------------")
+            print("hello user, in nova accounts you can 'log up' and 'sign in', enter a what you want")
+            novaccountinput = input("~/superlink/novaccounts/@:")
+            
+            if novaccountinput == "log up":
+                usname = input("\nplease enter a name: ")
+                novamail = f"{usname.strip().lower()}@novaccount.com"
+                novacontactinputpasswd = input("please enter a passwd: ")
+                print("what word white?")
+                print("-----------------")
+                print("|               |")
+                print("|   §ĲpĖR       |")
+                print("|(for bad pc: sper, one letter miss)|")
+                print("-----------------")
+                print("'exit' for exit")
+                while True:
+                    verifyinput = input("/:")
+                    if verifyinput == "super":
+                        print("ok, you have verified account.")
+                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                        break
+                    elif verifyinput == "exit":
+                        break
+                    else:
+                        print("invalid word.")
+                        print("try again.")
+                try:
+                    firstone = supabase.auth.sign_up({"email": novamail, "password": novacontactinputpasswd})
+                    newuser = firstone.user 
+                    if not newuser:
+                        print("err")
+                    else:
+                        supabase.table("profiles").insert(
+                            {"id": newuser.id, "username": usname.strip()}
+                        ).execute()
+                        print("verifing...")
+                        time.sleep(2)
+                        print("\033[H\033[J", end="")
+                        print("welcome back, user. nice to see you.")
+                        print("ok, create. you can see your account in the command: getaccount")
+                        newus = newuser
+                except Exception as e:
+                    print(f"sorry, err {e}")
+            elif novaccountinput == "sign in":
+                usname = input("please enter a user: ")  
+                novacontactinputpasswd = input("please enter a passwd: ")
+                print("what word white?")
+                print("-----------------")
+                print("|               |")
+                print("|   §ĲpĖR       |")
+                print("|(for bad pc: sper, one letter miss)|")
+                print("-----------------")
+                print("'exit' for exit")
+                while True:
+                    verifyinput = input("/:")
+                    if verifyinput == "super":
+                        print("ok, you have verified account.")
+                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                        break
+                    elif verifyinput == "exit":
+                        break
+                    else:
+                        print("invalid word.")
+                        print("try again.")
+                novamail = f"{usname.strip().lower()}@novaccount.com"
+                try:
+                    response = supabase.auth.sign_in_with_password({"email": novamail, "password": novacontactinputpasswd,})
+                    user = response.user
+                    if user:
+                        time.sleep(2)
+                        print("\033[H\033[J", end="")
+                        print("welcome back, user. nice to see you.")
+                        newus = user
+                    else:
+                        print("err")
+                except Exception as e:
+                    print(f"sign in err, {e}")
+        elif command == "getaccount --delete":
+            try:
+                if newus == "":
+                    print("you dont have nova account> create account in 'NOVAccount'")
+                else:
+                    supabase.auth.admin.delete_user(newus.id)
+                    print("account deleted.")
+            except Exception as e:
+                print(f"you dont have account. or err {e}")
+
+        elif command == "getaccount":
+            try:
+                if newus == "":
+                    print("you dont have nova account> create account in 'NOVAccount'")
+                else:
+                    print(f"you account: {newus.username}, email: {newus.email}, id: {newus.id}, verified: {newus.email_confirmed_at} ✓")
+            except Exception as e:
+                print(f"you dont have account. or err {e}")
+        elif command == "version --max":
+            print(f"KILL OS linux max version: {requests.get('https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases/latest').json()['tag_name']}")
+        elif command == "NOVANetwork --chat":
+            print("------------ NOVANetwork, chat for people from different countries, but users of KillOS ------------")
+            if not newus:
+                print("you don't have nova account> create account in 'NOVAccount'")
+            else:
+                rspn = (supabase.table("massages") .select("username, massage, created_at") .order("created_at", desc=False) .limit(15) .execute())
+                if rspn.data:
+                    for row in rspn.data:
+                        time_str = row["created_at"].split("T")[1][:5]
+                        print(f"[{time_str}] {row['username']}: {row['massage']}")
+                else:
+                    print("chat is empty, send message?")
+
+                chatmassag = input("/:")
+                if chatmassag == "":
+                    print("massage is empty.")
+                elif chatmassag == "exit":
+                    print("exit chat.")
+                else:
+                    try:
+                        newusrsp = supabase.auth.get_user()
+                        newusrid = newusrsp.user.id
+                        profilersp = (
+                            supabase.table("profiles")
+                            .select("username")
+                            .eq("id", newusrid)
+                            .execute()
+                        )
+                        usnme = profilersp.data[0]["username"]
+                        supabase.table("massages").insert({
+                            "user_id": newusrid,
+                            "username": usnme,
+                            "massage": chatmassag,
+                        }).execute()
+                        
+                    except Exception as e:
+                        print(f"you don't have nova account. or err {e}")
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
