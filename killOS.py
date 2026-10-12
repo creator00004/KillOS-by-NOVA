@@ -2305,7 +2305,7 @@ if choice == 1:
             if not newus:
                 print("you don't have nova account> create account in 'NOVAccount'")
             else:
-                rspn = (supabase.table("massages") .select("username, massage, created_at") .order("created_at", desc=False) .limit(15) .execute())
+                rspn = (supabase.table("massages") .select("username, massage, created_at") .order("created_at", desc=False) .limit(20) .execute())
                 if rspn.data:
                     for row in rspn.data:
                         time_str = row["created_at"].split("T")[1][:5]
@@ -2313,7 +2313,7 @@ if choice == 1:
                 else:
                     print("chat is empty, send message?")
 
-                chatmassag = input("/:")
+                chatmassag = input(f"{novacontactmail}/:")
                 if chatmassag == "":
                     print("massage is empty.")
                 elif chatmassag == "exit":
