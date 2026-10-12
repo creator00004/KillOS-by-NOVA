@@ -10,7 +10,7 @@ you must start os in the 'C:' directory, this problem fixed in 0.7.1.6
 
 ------------INFORMATION---------
 hello, This is my first open source project,
-1200+ lines of code, 75000+ characters,
+2200+ lines of code, 130000+ characters,
 time to write the first version: 7 days.
 this project is: "game-quest" simulator of operating system.
 
