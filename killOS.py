@@ -21,7 +21,7 @@ import winsound
 from pathlib import Path
 import winreg as reg
 import sys
-
+admintools = False
 
 class usercreate:
     def __init__(self, username, usermode, password):
@@ -109,10 +109,8 @@ def thead_func():
     while True:
         time.sleep(random.randint(1060, 6705))
         random.choice([function1, function2])()
-        
 background_activity = threading.Thread(target=thead_func, daemon=True)
 
-#data
 name_machine = getpass.getuser()
 all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
 cpu = platform.processor()
@@ -178,6 +176,7 @@ systemversion = "KILL OS 3.1 Arch Linux 7.2.3.arch1-3"
 googleflag = False
 coreflag = False
 killos32flag = False
+masreal = 0
 filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read", "req.txt"
 PermissionE = "Permission denied."
 id = "1root"
@@ -217,7 +216,6 @@ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
 bootflag = False
 key = "NOVA-543-NOVA"
 
-#active daemons
 background_activity.start()
 
 the_final = '''
@@ -595,7 +593,7 @@ if choice == 1:
             print("\r 50 releases")
             print("\r 51 bootloader mode --dis ")
             print("\r 52 bootloader mode --en ")
-            print("\r 53 DE")
+            print("\r 53 DE | broken |")
             print("\r 54 killos -wykom (killos what you know of me)")
             print("\r 55 NOVA Private Subscription (or 'NPS')")
             print("\r 56 nova permission (or 'np')")
@@ -606,9 +604,12 @@ if choice == 1:
             print("\r 61 getaccount --delete")
             print("\r 62 version --max")
             print("\r 63 NOVANetwork --chat")
+            print("\r 64 our TikTok")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
+            if admintools == True:
+                print("\r database --admin")
             
 
         elif command == "lsblk":
@@ -1832,6 +1833,7 @@ if choice == 1:
                                 print("invalid key")
         elif command == "minigame":
             print(" hello! welcome to minigame, controls: 1, 2, 3, 4")
+            print("'exit' for exit")
             while True:
                 gamechoisecont = input("choice: ")
                 if gamechoisecont == "1":
@@ -2211,6 +2213,7 @@ if choice == 1:
                 usname = input("\nplease enter a name: ")
                 novamail = f"{usname.strip().lower()}@novaccount.com"
                 novacontactinputpasswd = input("please enter a passwd: ")
+                print("verification")
                 print("what word white?")
                 print("-----------------")
                 print("|               |")
@@ -2249,6 +2252,7 @@ if choice == 1:
             elif novaccountinput == "sign in":
                 usname = input("please enter a user: ")  
                 novacontactinputpasswd = input("please enter a passwd: ")
+                print("verification")
                 print("what word white?")
                 print("-----------------")
                 print("|               |")
@@ -2303,41 +2307,59 @@ if choice == 1:
         elif command == "NOVANetwork --chat":
             print("------------ NOVANetwork, chat for people from different countries, but users of KillOS ------------")
             print("'exit' to exit")
+            print("'delete' or 'del' to delete your massages")
+            print("'get' to get new massages")
+            print(" :: advisable use English")
             if not newus:
                 print("you don't have nova account> create account in 'NOVAccount'")
             else:
-                rspn = (supabase.table("massages") .select("username, massage, created_at") .order("created_at", desc=False) .limit(20) .execute())
+                rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=False).limit(30).execute())
                 if rspn.data:
                     for row in rspn.data:
                         time_str = row["created_at"].split("T")[1][:5]
                         print(f"[{time_str}] {row['username']}: {row['massage']}")
                 else:
                     print("chat is empty, send message?")
-
-                chatmassag = input(f"{novacontactmail}/:")
-                if chatmassag == "":
-                    print("massage is empty.")
-                elif chatmassag == "exit":
-                    print("exit chat.")
-                else:
+                while True:
                     try:
-                        newusrsp = supabase.auth.get_user()
-                        newusrid = newusrsp.user.id
-                        profilersp = (
-                            supabase.table("profiles")
-                            .select("username")
-                            .eq("id", newusrid)
-                            .execute()
-                        )
-                        usnme = profilersp.data[0]["username"]
-                        supabase.table("massages").insert({
-                            "user_id": newusrid,
-                            "username": usnme,
-                            "massage": chatmassag,
-                        }).execute()
-                        
+                        chatmassag = input(f"{novacontactmail}/:")
+                        if chatmassag == "":
+                            print("massage is empty.")
+                        elif chatmassag == "exit":
+                            print("exit chat.")
+                            print("---------------------------------------------------------------------------------------------------")
+                            break
+                        elif chatmassag in ("delete", "del"):
+                            supabase.table("massages").delete().eq("user_id", newus.id).execute()
+                            print("your massages deleted.")
+                        elif chatmassag == "get":
+                            rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(2).execute())
+                            if rspn.data:
+                                for row in rspn.data:
+                                    time_str = row["created_at"].split("T")[1][:5]
+                                    print(f"[{time_str}] {row['username']}: {row['massage']}")
+                            else:
+                                print("chat is empty.")
+                        else:
+                            newusrsp = supabase.auth.get_user()
+                            newusrid = newusrsp.user.id
+                            profilersp = (
+                                supabase.table("profiles")
+                                .select("username")
+                                .eq("id", newusrid)
+                                .execute()
+                            )
+                            usnme = profilersp.data[0]["username"]
+                            supabase.table("massages").insert({
+                                "user_id": newusrid,
+                                "username": usnme,
+                                "massage": chatmassag,
+                            }).execute()
+
                     except Exception as e:
                         print(f"you don't have nova account. or err {e}")
+        elif command == "our TikTok":
+            webbrowser.open("tiktok.com/@novakillos")
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
