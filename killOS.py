@@ -532,7 +532,12 @@ if choice == 1:
     while True:
         print("\r'help' to commands")
         command = input(f"/{directory}/{user}@ ")
-        if command == "help":
+        if command == "" or KeyboardInterrupt:
+            while True:
+                print(f"{Fore.RED} KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e")
+                time.sleep(0.3)
+                winsound.Beep(1000,40000)
+        elif command == "help":
             print("\r 1 lsblk")
             print("\r 2 exit")
             print("\r 3 unmount")
@@ -608,8 +613,7 @@ if choice == 1:
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
-            if admintools == True:
-                print("\r database --admin")
+            
             
 
         elif command == "lsblk":
@@ -2333,7 +2337,7 @@ if choice == 1:
                             supabase.table("massages").delete().eq("user_id", newus.id).execute()
                             print("your massages deleted.")
                         elif chatmassag == "get":
-                            rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(2).execute())
+                            rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(6).execute())
                             if rspn.data:
                                 for row in rspn.data:
                                     time_str = row["created_at"].split("T")[1][:5]
