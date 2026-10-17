@@ -2032,7 +2032,7 @@ if choice == 1:
                                 print(f"\nDownloading {fname}...")
                                 with requests.get(fordownload, stream=True) as r:
                                     r.raise_for_status()
-                                fulldir = sys.path = rootdir / "releases" / fname
+                                fulldir = rootdir / "releases" / fname
                                 with open(fulldir, "wb") as f:
                                         for chunk in r.iter_content(chunk_size=8192):
                                             f.write(chunk)
@@ -2353,6 +2353,7 @@ if choice == 1:
                                 .eq("id", newusrid)
                                 .execute()
                             )
+
                             usnme = profilersp.data[0]["username"]
                             supabase.table("massages").insert({
                                 "user_id": newusrid,
