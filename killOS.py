@@ -532,12 +532,7 @@ if choice == 1:
     while True:
         print("\r'help' to commands")
         command = input(f"/{directory}/{user}@ ")
-        if command == "" or KeyboardInterrupt:
-            while True:
-                print(f"{Fore.RED} KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e")
-                time.sleep(0.3)
-                winsound.Beep(1000,40000)
-        elif command == "help":
+        if command == "help":
             print("\r 1 lsblk")
             print("\r 2 exit")
             print("\r 3 unmount")
