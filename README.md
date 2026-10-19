@@ -26,3 +26,7 @@ All details are made for better immersion in the simulation of the Linux-based o
 the simulator use some your real data,
 for the immersion improvements,
 program dont have malicious code, you can see the code in the "KillOS.py"
+
+<img width="560" height="555" alt="photo_5381931804345966147_w" src="https://github.com/user-attachments/assets/30c25797-5c09-40af-8c1f-f17b42c3738c" />
+<img width="555" height="555" alt="photo_5381931804345966146_w" src="https://github.com/user-attachments/assets/0e137f84-6309-4b05-9d1f-5ba7f4100282" />
+
