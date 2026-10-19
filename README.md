@@ -2,6 +2,7 @@
 if you kill os vervion less then 0.7.1.6
 and support check/download releases in the kill os
 you must start os in the 'C:' directory, this problem fixed in 0.7.1.6
+(P.S. downloads problem fix in 0.8.9.1)
 
 ------------PASSWORD AND KEY AND WORKER KEY------------
 "123321" 
