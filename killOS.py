@@ -275,6 +275,7 @@ try:
         else:
             pass
 
+
     def function2():
         time.sleep(100)
         print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
