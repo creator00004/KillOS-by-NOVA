@@ -265,6 +265,7 @@ try:
             self.object = object
             self.nova_rate = nova_rate
 
+            
 
     def function1():
         print("")
