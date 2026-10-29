@@ -1,0 +1,5 @@
+psutil
+supabase
+requests
+pyautogui
+colorama

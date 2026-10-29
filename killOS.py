@@ -110,325 +110,338 @@ def thead_func():
         time.sleep(random.randint(1060, 6705))
         random.choice([function1, function2])()
 background_activity = threading.Thread(target=thead_func, daemon=True)
-
-name_machine = getpass.getuser()
-all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
-cpu = platform.processor()
-mail = f"{name_machine}@microsofT.account"
-ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
-gpu = subprocess.getoutput('powershell "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"').strip()
-loc = locale.getdefaultlocale()[0]
-us = os.getlogin()
-user = "root"
-usermodee = [0, 1, 2, 3, 4]
-if user == "root":
-    usermode = 1
-else:
-    usermode = 0
-supabase: Client = create_client("https://qqpsevxwdrkkzovgjzet.supabase.co", "sb_publishable_bPuaZflzw7e2QZLJBuPEUQ_uhZASJWj")
-newus = ""
-ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
-respose = requests.get(ulrelease)
-datarelease = respose.json()
-for index, release in enumerate(datarelease, start=1):
-    versionrelease = release.get("tag_name", "N/A")
-User = usercreate("root", usermode, 123321)
-User.username = user
-usercustom = User
-textcreate = ""
-sysinfo = {
-    "CPU": f"{cpu}",
-    "RAM": f"{ram}",
-    "GPU": f"{gpu}",
-    "OS": "KILL OS (linux)"
-}
-novacontactmail = "nova@killos.org"
-rootdir = Path("C:/killOS")
-filesystem = [
-    rootdir / "releases",
-    rootdir / "boot" / "killos",
-    rootdir / "boot" / "mnt",
-    rootdir / "mnt",
-    rootdir / "setup",
-    rootdir / "root",
-    rootdir / "etc",
-    rootdir / "killos" / "mnt",
-    rootdir / "lib",
-    rootdir / "pacman"]
-for folder in filesystem:
-    folder.mkdir(parents=True, exist_ok=True)
-forboot = Path(sys.argv[0]).resolve()
-forbootdir = rootdir / "boot" / "killos"
-sett = forbootdir / forboot.name
-if not sett.exists():
-    shutil.copy2(forboot, sett)
-session_time = time.time()
-error = "KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e"
-DNS = 1111, 8080
-perflag = False
-yayactive = False
-googleinstall = False
-directory = ""
-cd_list = ["boot", "user", "setup", "root", "etc",  "lib", "killos", "pacman"]
-boot_list = ["killos", "mnt", "bootloader.sh", "NOVA_permission.daemon"]
-lib_list = [f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin"]
-systemversion = "KILL OS 3.1 Arch Linux 7.2.3.arch1-3"
-googleflag = False
-coreflag = False
-killos32flag = False
-masreal = 0
-filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read", "req.txt"
-PermissionE = "Permission denied."
-id = "1root"
-killosfilesystem = userdefaultPermission = userfilesystemPermission("1root", 1)
-statusconf = False
-usercustom = usercreate("root", 1, 123321)
-permissionnovafileactions = False
-cdboot = False
-ss = '''
-                 uuuuuuu
-             uu$$$$$$$$$$$uu
-          uu$$$$$$$$$$$$$$$$$uu
-         u$$$$$$$$$$$$$$$$$$$$$u
-        u$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$"   "$$$"   "$$$$$$u
-       "$$$$"      u$u       $$$$"
-        $$$u       u$u       u$$$
-        $$$u      u$$$u      u$$$
-         "$$$$uu$$$   $$$uu$$$$"
-          "$$$$$$$"   "$$$$$$$"
-            u$$$$$$$u$$$$$$$u
-             u$"$"$"$"$"$"$u
-  uuu        $$u$ $ $ $ $u$$       uuu
- u$$$$        $$$$$u$u$u$$$       u$$$$
-  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
-u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
-$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
- """      ""$$$$$$$$$$$uu ""$"""
-           uuuu ""$$$$$$$$$$uuu
-  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
-  $$$$$$$$$$""""           ""$$$$$$$$$$$"
-   "$$$$$"                      ""$$$$""
-     $$$"                         $$$$"
-'''
-bootflag = False
-key = "NOVA-543-NOVA"
-
-background_activity.start()
-
-the_final = '''
-from binascii import a2b_qp
-from logging import root
-from math import e
-import platform
-import shutil
-import subprocess
-import time
-import locale
-import psutil
-import sys
-import threading
-import os
-import requests
-import getpass
-import webbrowser
-import pyautogui
-import random
-from colorama import *
-import winsound
-from pathlib import Path
-import winreg as reg
-import sys
-
-class usercreate:
-    def __init__(self, username, usermode, password):
-        self.username = username
-        self.usermode = usermode
-        self.password = password
-
-class userfilesystemPermission:
-    def __init__(self, userType, PermissionUser):
-        self.userType = userType
-        self.PermissionUser = PermissionUser
-
-class system_permisson:
-    def __init__(self, permission, object, nova_rate):
-        self.permission = permission
-        self.object = object
-        self.nova_rate = nova_rate
-
-
-def function1():
-    print("")
-    if usercustom.username == "root":
-        time.sleep(100)
-        print("you are in 'root', recommended to work under you own user")
-        print("create your user with 'useradd'")
+try:
+    name_machine = getpass.getuser()
+    all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+    cpu = platform.processor()
+    mail = f"{name_machine}@microsofT.account"
+    ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
+    gpu = subprocess.getoutput('powershell "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"').strip()
+    loc = locale.getdefaultlocale()[0]
+    us = os.getlogin()
+    user = "root"
+    usermodee = [0, 1, 2, 3, 4]
+    if user == "root":
+        usermode = 1
     else:
-        pass
+        usermode = 0
 
-def function2():
-    time.sleep(100)
-    print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
-def sup():
-            print(" _____________________________________________")
-            print("|  K1LLM3NU (super)                           |")
-            print("|_____________________________________________|")
-            print("| 1. dolphin                                  |")
-            print("| 2. shutdown                                 |")
-            print("| 3. sudo useradd                             |")
-            print("| 4. kill os                                  |")
-            print("|                                             |")
-            print("|_____________________________________________|")
-            print("  :: enter only number")
-            superi = input("/killmenu@/ ")
-            if superi == "1":
-                print("\rStarting dolphin file manager...")
-                time.sleep(1)
-                subprocess.run(["explorer.exe"])
-            elif superi == "2":
-                os.system("shutdown /s /t 0")
-            elif superi == "3":
-                username = input(" -m -g users -G wheel -s /bin/bash ")
-                usercustom = usercreate(username, 0, password)
-                user = username
-                password = input("sudo passwd: ")
-                time.sleep(1)
-                print(f"\rUser {username} created successfully.")
-            elif superi == "4":
-                print("\r                linux: killOS")
-                print(f"\r $$\   $$\               CPU: {cpu}")
-                print(f"\r $$ | $$  |                RAM: {ram}")
-                print(f"\r $$ |$$  /                  GPU: {gpu}")
-                print(f"\r $$$$$  /                   found users in umounted partition: {us}")
-                print(f"\r $$  $$<                   found locale: {loc}")
-                print("\r  $$ |\$$\                 ")
-                print("\r  $$ | \$$\                console: bash")
-                print("\r  \__|  \__|")
+    try:
+        supabase: Client = create_client("https://qqpsevxwdrkkzovgjzet.supabase.co", "sb_publishable_bPuaZflzw7e2QZLJBuPEUQ_uhZASJWj")
+        newus = ""
+        ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
+        respose = requests.get(ulrelease)
+        datarelease = respose.json()
+        for index, release in enumerate(datarelease, start=1):
+            versionrelease = release.get("tag_name", "N/A")
+    except Exception as e:
+        print("\n")
+        print("err, connection is unstable or our servers are closed/temporarily closed, we will soon fix the bug")
+    User = usercreate("root", usermode, 123321)
+    User.username = user
+    usercustom = User
+    textcreate = ""
+    sysinfo = {
+        "CPU": f"{cpu}",
+        "RAM": f"{ram}",
+        "GPU": f"{gpu}",
+        "OS": "KILL OS (linux)"
+    }
 
-def WYKOM():
-    print(" you are:")
-    print(usercustom)
-    print(" you have:")
-    print(cpu)
-    print(f"{ram} G of RAM")
-    print(gpu)
-    print("you communicate on: ")
-    print(loc)
-    print("you password is:")
-    print(usercustom.password)
-    print("you are name:")
-    print(name_machine)
-    print("microsoft:")
-    print(mail)
+    novacontactmail = "nova@killos.org"
+    rootdir = Path("C:/killOS")
+    filesystem = [
+        rootdir / "releases",
+        rootdir / "boot" / "killos",
+        rootdir / "boot" / "mnt",
+        rootdir / "mnt",
+        rootdir / "setup",
+        rootdir / "root",
+        rootdir / "etc",
+        rootdir / "killos" / "mnt",
+        rootdir / "lib",
+        rootdir / "pacman"]
+    for folder in filesystem:
+        folder.mkdir(parents=True, exist_ok=True)
+    forboot = Path(sys.argv[0]).resolve()
+    forbootdir = rootdir / "boot" / "killos"
+    sett = forbootdir / forboot.name
+    if not sett.exists():
+        shutil.copy2(forboot, sett)
+    session_time = time.time()
+    error = "KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e"
+    DNS = 1111, 8080
+    perflag = False
+    yayactive = False
+    googleinstall = False
+    directory = ""
+    cd_list = ["boot", "user", "setup", "root", "etc",  "lib", "killos", "pacman"]
+    boot_list = ["killos", "mnt", "bootloader.sh", "NOVA_permission.daemon"]
+    lib_list = [f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin", f"{random.randint(1, 99999)}.bin"]
+    systemversion = "KILL OS 3.1 Arch Linux 7.2.3.arch1-3"
+    googleflag = False
+    coreflag = False
+    killos32flag = False
+    masreal = 0
+    filesystemkillos = "packets", "pacman", "mnt", "core.conf", "killos.sh", "Not for read", "req.txt"
+    PermissionE = "Permission denied."
+    id = "1root"
+    killosfilesystem = userdefaultPermission = userfilesystemPermission("1root", 1)
+    statusconf = False
+    usercustom = usercreate("root", 1, 123321)
+    permissionnovafileactions = False
+    cdboot = False
+    ss = '''
+                    uuuuuuu
+                uu$$$$$$$$$$$uu
+            uu$$$$$$$$$$$$$$$$$uu
+            u$$$$$$$$$$$$$$$$$$$$$u
+            u$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$"   "$$$"   "$$$$$$u
+        "$$$$"      u$u       $$$$"
+            $$$u       u$u       u$$$
+            $$$u      u$$$u      u$$$
+            "$$$$uu$$$   $$$uu$$$$"
+            "$$$$$$$"   "$$$$$$$"
+                u$$$$$$$u$$$$$$$u
+                u$"$"$"$"$"$"$u
+    uuu        $$u$ $ $ $ $u$$       uuu
+    u$$$$        $$$$$u$u$u$$$       u$$$$
+    $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+    u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+    $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+    """      ""$$$$$$$$$$$uu ""$"""
+            uuuu ""$$$$$$$$$$uuu
+    u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+    $$$$$$$$$$""""           ""$$$$$$$$$$$"
+    "$$$$$"                      ""$$$$""
+        $$$"                         $$$$"
+    '''
+    bootflag = False
+    key = "NOVA-543-NOVA"
 
-def thead_func():
-    while True:
-        time.sleep(random.randint(1060, 6705))
-        random.choice([function1, function2])()
-        
-background_activity = threading.Thread(target=thead_func, daemon=True)
+    background_activity.start()
 
-#data
-name_machine = getpass.getuser()
-all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
-cpu = platform.processor()
-mail = f{name_machine}@microsofT.account
-ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
-gpu = subprocess.getoutput('powershell Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name').strip()
-loc = locale.getdefaultlocale()[0]
-us = os.getlogin()
-user = root
-usermodee = [0, 1, 2, 3, 4]
-if user == root:
-    usermode = 1
-else:
-    usermode = 0
-User = usercreate("root", usermode, 123321)
-User.username = user
-usercustom = User
-textcreate = 
-sysinfo = {
-    "CPU": f{cpu},
-    "RAM": f{ram},
-    "GPU": f{gpu},
-    "OS": "KILL OS (linux)"
-}
-novacontactmail = nova@killos.org
-rootdir = Path(C:/killOS)
-filesystem = [
-    rootdir / releases,
-    rootdir / boot / killos,
-    rootdir / boot / mnt,
-    rootdir / mnt,
-    rootdir / setup,
-    rootdir / root,
-    rootdir / etc,
-    rootdir / killos / mnt,
-    rootdir / lib,
-    rootdir / pacman]
-for folder in filesystem:
-    folder.mkdir(parents=True, exist_ok=True)
-forboot = Path(sys.argv[0]).resolve()
-forbootdir = rootdir / boot / killos
-sett = forbootdir / forboot.name
-if not sett.exists():
-    shutil.copy2(forboot, sett)
-session_time = time.time()
-error = KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e
-DNS = 1111, 8080
-perflag = False
-yayactive = False
-googleinstall = False
-directory = 
-lib_list = 
-systemversion = KILL OS 3.1 Arch Linux 7.2.3.arch1-3
-googleflag = False
-coreflag = False
-killos32flag = False
-filesystemkillos = packets, pacman, mnt, core.conf, killos.sh, Not for read, req.txt
-PermissionE = Permission denied.
-id = 1root
-killosfilesystem = userdefaultPermission = userfilesystemPermission(1root, 1)
-statusconf = False
-usercustom = usercreate(root, 1, 123321)
-permissionnovafileactions = False
-cdboot = False
-ss = 
-                 uuuuuuu
-             uu$$$$$$$$$$$uu
-          uu$$$$$$$$$$$$$$$$$uu
-         u$$$$$$$$$$$$$$$$$$$$$u
-        u$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$$$$$$$$$$$$$$$$$$$$u
-       u$$$$$$"   "$$$"   "$$$$$$u
-       "$$$$"      u$u       $$$$"
-        $$$u       u$u       u$$$
-        $$$u      u$$$u      u$$$
-         "$$$$uu$$$   $$$uu$$$$"
-          "$$$$$$$"   "$$$$$$$"
-            u$$$$$$$u$$$$$$$u
-             u$"$"$"$"$"$"$u
-  uuu        $$u$ $ $ $ $u$$       uuu
- u$$$$        $$$$$u$u$u$$$       u$$$$
-  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
-u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
-$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
- """      ""$$$$$$$$$$$uu ""$"""
-           uuuu ""$$$$$$$$$$uuu
-  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
-  $$$$$$$$$$""""           ""$$$$$$$$$$$"
-   "$$$$$"                      ""$$$$""
-     $$$"                         $$$$"
+    the_final = '''
+    from binascii import a2b_qp
+    from logging import root
+    from math import e
+    import platform
+    import shutil
+    import subprocess
+    import time
+    import locale
+    import psutil
+    import sys
+    import threading
+    import os
+    import requests
+    import getpass
+    import webbrowser
+    import pyautogui
+    import random
+    from colorama import *
+    import winsound
+    from pathlib import Path
+    import winreg as reg
+    import sys
 
-bootflag = False
-key = 'NOVA-543-NOVA'
+    class usercreate:
+        def __init__(self, username, usermode, password):
+            self.username = username
+            self.usermode = usermode
+            self.password = password
 
-#active daemons
-background_activity.start()'''
+    class userfilesystemPermission:
+        def __init__(self, userType, PermissionUser):
+            self.userType = userType
+            self.PermissionUser = PermissionUser
+
+    class system_permisson:
+        def __init__(self, permission, object, nova_rate):
+            self.permission = permission
+            self.object = object
+            self.nova_rate = nova_rate
+
+
+    def function1():
+        print("")
+        if usercustom.username == "root":
+            time.sleep(100)
+            print("you are in 'root', recommended to work under you own user")
+            print("create your user with 'useradd'")
+        else:
+            pass
+
+    def function2():
+        time.sleep(100)
+        print("\rad: want private/anonymity? i known you choice: NOVA Private Subscription")
+    def sup():
+                print(" _____________________________________________")
+                print("|  K1LLM3NU (super)                           |")
+                print("|_____________________________________________|")
+                print("| 1. dolphin                                  |")
+                print("| 2. shutdown                                 |")
+                print("| 3. sudo useradd                             |")
+                print("| 4. kill os                                  |")
+                print("|                                             |")
+                print("|_____________________________________________|")
+                print("  :: enter only number")
+                superi = input("/killmenu@/ ")
+                if superi == "1":
+                    print("\rStarting dolphin file manager...")
+                    time.sleep(1)
+                    subprocess.run(["explorer.exe"])
+                elif superi == "2":
+                    os.system("shutdown /s /t 0")
+                elif superi == "3":
+                    username = input(" -m -g users -G wheel -s /bin/bash ")
+                    usercustom = usercreate(username, 0, password)
+                    user = username
+                    password = input("sudo passwd: ")
+                    time.sleep(1)
+                    print(f"\rUser {username} created successfully.")
+                elif superi == "4":
+                    print("\r                linux: killOS")
+                    print(f"\r $$\   $$\               CPU: {cpu}")
+                    print(f"\r $$ | $$  |                RAM: {ram}")
+                    print(f"\r $$ |$$  /                  GPU: {gpu}")
+                    print(f"\r $$$$$  /                   found users in umounted partition: {us}")
+                    print(f"\r $$  $$<                   found locale: {loc}")
+                    print("\r  $$ |\$$\                 ")
+                    print("\r  $$ | \$$\                console: bash")
+                    print("\r  \__|  \__|")
+
+    def WYKOM():
+        print(" you are:")
+        print(usercustom)
+        print(" you have:")
+        print(cpu)
+        print(f"{ram} G of RAM")
+        print(gpu)
+        print("you communicate on: ")
+        print(loc)
+        print("you password is:")
+        print(usercustom.password)
+        print("you are name:")
+        print(name_machine)
+        print("microsoft:")
+        print(mail)
+
+    def thead_func():
+        while True:
+            time.sleep(random.randint(1060, 6705))
+            random.choice([function1, function2])()
+            
+    background_activity = threading.Thread(target=thead_func, daemon=True)
+
+    #data
+    name_machine = getpass.getuser()
+    all = sorted(os.listdir(os.path.join(os.path.expanduser("~"), "Desktop")))
+    cpu = platform.processor()
+    mail = f{name_machine}@microsofT.account
+    ram = round(psutil.virtual_memory().total / (1024 ** 3), 1)
+    gpu = subprocess.getoutput('powershell Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name').strip()
+    loc = locale.getdefaultlocale()[0]
+    us = os.getlogin()
+    user = root
+    usermodee = [0, 1, 2, 3, 4]
+    if user == root:
+        usermode = 1
+    else:
+        usermode = 0
+    User = usercreate("root", usermode, 123321)
+    User.username = user
+    usercustom = User
+    textcreate = 
+    sysinfo = {
+        "CPU": f{cpu},
+        "RAM": f{ram},
+        "GPU": f{gpu},
+        "OS": "KILL OS (linux)"
+    }
+    novacontactmail = nova@killos.org
+    rootdir = Path(C:/killOS)
+    filesystem = [
+        rootdir / releases,
+        rootdir / boot / killos,
+        rootdir / boot / mnt,
+        rootdir / mnt,
+        rootdir / setup,
+        rootdir / root,
+        rootdir / etc,
+        rootdir / killos / mnt,
+        rootdir / lib,
+        rootdir / pacman]
+    for folder in filesystem:
+        folder.mkdir(parents=True, exist_ok=True)
+    forboot = Path(sys.argv[0]).resolve()
+    forbootdir = rootdir / boot / killos
+    sett = forbootdir / forboot.name
+    if not sett.exists():
+        shutil.copy2(forboot, sett)
+    session_time = time.time()
+    error = KERNEL PANIC:0x0000000e Fatal exception in interrupt 0x0000000e Fatal exception in interrupt< stopError0x0000000e
+    DNS = 1111, 8080
+    perflag = False
+    yayactive = False
+    googleinstall = False
+    directory = 
+    lib_list = 
+    systemversion = KILL OS 3.1 Arch Linux 7.2.3.arch1-3
+    googleflag = False
+    coreflag = False
+    killos32flag = False
+    filesystemkillos = packets, pacman, mnt, core.conf, killos.sh, Not for read, req.txt
+    PermissionE = Permission denied.
+    id = 1root
+    killosfilesystem = userdefaultPermission = userfilesystemPermission(1root, 1)
+    statusconf = False
+    usercustom = usercreate(root, 1, 123321)
+    permissionnovafileactions = False
+    cdboot = False
+    ss = 
+                    uuuuuuu
+                uu$$$$$$$$$$$uu
+            uu$$$$$$$$$$$$$$$$$uu
+            u$$$$$$$$$$$$$$$$$$$$$u
+            u$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$"   "$$$"   "$$$$$$u
+        "$$$$"      u$u       $$$$"
+            $$$u       u$u       u$$$
+            $$$u      u$$$u      u$$$
+            "$$$$uu$$$   $$$uu$$$$"
+            "$$$$$$$"   "$$$$$$$"
+                u$$$$$$$u$$$$$$$u
+                u$"$"$"$"$"$"$u
+    uuu        $$u$ $ $ $ $u$$       uuu
+    u$$$$        $$$$$u$u$u$$$       u$$$$
+    $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+    u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+    $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+    """      ""$$$$$$$$$$$uu ""$"""
+            uuuu ""$$$$$$$$$$uuu
+    u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+    $$$$$$$$$$""""           ""$$$$$$$$$$$"
+    "$$$$$"                      ""$$$$""
+        $$$"                         $$$$"
+
+    bootflag = False
+    key = 'NOVA-543-NOVA'
+
+    #active daemons
+    background_activity.start()'''
+except Exception as e:
+    print(f"\rsomething get wrong, error for admins & dev: {e}. maybe connection error or error in sub-operating system")
+    print("\rneeded computer component:")
+    print("\rsystem --recommended=windows_x64 (coming soon native linux,\n or for linux install all modules for start PYTHON file in linux for work)")
+    print("\ralso problem maybe in RAM")
+    print("\rtraceback:")
+    print(f"{e}")
 
 symbols = ['ø', 'Ø', 'ɸ', 'Œ', 'ɶ']
 for i in range(30):
@@ -605,6 +618,8 @@ if choice == 1:
             print("\r 62 version --max")
             print("\r 63 NOVANetwork --chat")
             print("\r 64 our TikTok")
+            print("\r 65 how to linux? (htl)")
+            print("")
             print("\r ")
             print("\r ")
             print("\r 0 super (or 'sp')")
@@ -1973,72 +1988,82 @@ if choice == 1:
             print("#[for systtem admin] for the repair system, first delete '/killos' this repository recreate if you finish, use: rf rm -rf /killos --force --as-root-novaroot --no-preserve-root and our marker, you know.")
             print("--------------------------------------------------------")
         elif command == "bootloader mode --en":
-            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
-            try:
-                key = reg.OpenKey(
-                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
-                )
-                killpath = r"C:\KillOS\boot\killos\KillOS.exe"
-                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath)
-                reg.CloseKey(key)
-                print("you pc will shutdown, YOU HAVE 10 SEC")
-                os.system("shutdown /s /t 10")
-            except Exception as e:
-                print("err")
+                kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+                try:
+                    key = reg.OpenKey(
+                        reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                    )
+                    killpath = r"C:\KillOS\boot\killos\KillOS.exe"
+                    reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath)
+                    reg.CloseKey(key)
+                    print("you pc will shutdown, YOU HAVE 10 SEC")
+                    os.system("shutdown /s /t 10")
+                except Exception as e:
+                    print("\rerr")
+                    print("err, you dont have key 'Shell', or you use linux/macOS, please no use this func until no get native realise.")
+            
         elif command == "bootloader mode --dis":
-            kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
             try:
-                key = reg.OpenKey(
-                    reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
-                )
-                killpath2 = r"C:\Windows\explorer.exe"
-                reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath2)
-                reg.CloseKey(key)
+                kp = r"Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+                try:
+                    key = reg.OpenKey(
+                        reg.HKEY_CURRENT_USER, kp, 0, reg.KEY_SET_VALUE
+                    )
+                    killpath2 = r"C:\Windows\explorer.exe"
+                    reg.SetValueEx(key, "Shell", 0, reg.REG_SZ, killpath2)
+                    reg.CloseKey(key)
+                except Exception as e:
+                    print("err")
             except Exception as e:
-                print("err")
+                print("\r")
+                print("err, you dont have key 'Shell', or you use linux/macOS, please no use this func until no get native realise.")
         elif command == "releases":
-            ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
-            respose = requests.get(ulrelease)
+            try:
+                ulrelease = ("https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases")
+                respose = requests.get(ulrelease)
 
-            if respose.status_code == 200:
-                datarelease = respose.json()
+                if respose.status_code == 200:
+                    datarelease = respose.json()
 
-                if datarelease:
-                    print(":: releases: :: ")
-                    
-                    for index, release in enumerate(datarelease, start=1):
-                        versionrelease = release.get("tag_name", "N/A")
-                        print(f"[{index}] :: - {versionrelease} - ::")
-
-                    choice_input = input("\nselect release number for download (or 'c' to cancel) //: ")
-
-                    if choice_input.isdigit():
-                        selected_idx = int(choice_input) - 1
-
+                    if datarelease:
+                        print(":: releases: :: ")
                         
-                        if 0 <= selected_idx < len(datarelease):
-                            chosen_release = datarelease[selected_idx]
-                            assets = chosen_release.get("assets", [])
+                        for index, release in enumerate(datarelease, start=1):
+                            versionrelease = release.get("tag_name", "N/A")
+                            print(f"[{index}] :: - {versionrelease} - ::")
 
-                            if assets:
-                                fordownload = assets[0]["browser_download_url"]
-                                fname = assets[0]["name"]
-                                
-                                print(f"\nDownloading {fname}...")
-                                with requests.get(fordownload, stream=True) as r:
-                                    r.raise_for_status()
-                                fulldir = rootdir / "releases" / fname
-                                with open(fulldir, "wb") as f:
-                                        for chunk in r.iter_content(chunk_size=8192):
-                                            f.write(chunk)
+                        choice_input = input("\nselect release number for download (or 'c' to cancel) //: ")
 
-                                print(f"download done, :: --> {fname} <-- ::, release will saves in /releases (if windows, in C:/killOS/releases)")
+                        if choice_input.isdigit():
+                            selected_idx = int(choice_input) - 1
+
+                            
+                            if 0 <= selected_idx < len(datarelease):
+                                chosen_release = datarelease[selected_idx]
+                                assets = chosen_release.get("assets", [])
+
+                                if assets:
+                                    fordownload = assets[0]["browser_download_url"]
+                                    fname = assets[0]["name"]
+                                    
+                                    print(f"\nDownloading {fname}...")
+                                    with requests.get(fordownload, stream=True) as r:
+                                        r.raise_for_status()
+                                    fulldir = rootdir / "releases" / fname
+                                    with open(fulldir, "wb") as f:
+                                            for chunk in r.iter_content(chunk_size=8192):
+                                                f.write(chunk)
+
+                                    print(f"download done, :: --> {fname} <-- ::, release will saves in /releases (if windows, in C:/killOS/releases)")
+                            else:
+                                print("number err.")
                         else:
-                            print("number err.")
-                    else:
-                        print("download falure, invalid.")
-            else:
-                print(f"Git to the killOS: {respose.status_code}.")
+                            print("download falure, invalid.")
+                else:
+                    print(f"Git to the killOS: {respose.status_code}.")
+            except Exception as e:
+                print("")
+                print("err, connection is unstable or our servers are closed/temporarily closed, we will soon fix the bug")
         elif command in ("super", "sp"):
             sup()
         elif command == "DE":
@@ -2205,84 +2230,88 @@ if choice == 1:
             markerde = True
         elif command in ("NOVAccount", "nova acccount"):
             print("------------------NOVAccount-------------------")
-            print("hello user, in nova accounts you can 'log up' and 'sign in', enter a what you want")
-            novaccountinput = input("~/superlink/novaccounts/@:")
-            
-            if novaccountinput == "log up":
-                usname = input("\nplease enter a name: ")
-                novamail = f"{usname.strip().lower()}@novaccount.com"
-                novacontactinputpasswd = input("please enter a passwd: ")
-                print("verification")
-                print("what word white?")
-                print("-----------------")
-                print("|               |")
-                print("|   §ĲpĖR       |")
-                print("|(for bad pc: sper, one letter miss)|")
-                print("-----------------")
-                print("'exit' for exit")
-                while True:
-                    verifyinput = input("/:")
-                    if verifyinput == "super":
-                        print("ok, you have verified account.")
-                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
-                        break
-                    elif verifyinput == "exit":
-                        break
-                    else:
-                        print("invalid word.")
-                        print("try again.")
-                try:
-                    firstone = supabase.auth.sign_up({"email": novamail, "password": novacontactinputpasswd})
-                    newuser = firstone.user 
-                    if not newuser:
-                        print("err")
-                    else:
-                        supabase.table("profiles").insert(
-                            {"id": newuser.id, "username": usname.strip()}
-                        ).execute()
-                        print("verifing...")
-                        time.sleep(2)
-                        print("\033[H\033[J", end="")
-                        print("welcome back, user. nice to see you.")
-                        print("ok, create. you can see your account in the command: getaccount")
-                        newus = newuser
-                except Exception as e:
-                    print(f"sorry, err {e}")
-            elif novaccountinput == "sign in":
-                usname = input("please enter a user: ")  
-                novacontactinputpasswd = input("please enter a passwd: ")
-                print("verification")
-                print("what word white?")
-                print("-----------------")
-                print("|               |")
-                print("|   §ĲpĖR       |")
-                print("|(for bad pc: sper, one letter miss)|")
-                print("-----------------")
-                print("'exit' for exit")
-                while True:
-                    verifyinput = input("/:")
-                    if verifyinput == "super":
-                        print("ok, you have verified account.")
-                        supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
-                        break
-                    elif verifyinput == "exit":
-                        break
-                    else:
-                        print("invalid word.")
-                        print("try again.")
-                novamail = f"{usname.strip().lower()}@novaccount.com"
-                try:
-                    response = supabase.auth.sign_in_with_password({"email": novamail, "password": novacontactinputpasswd,})
-                    userreq = response.user
-                    if userreq:
-                        time.sleep(2)
-                        print("\033[H\033[J", end="")
-                        print("welcome back, user. nice to see you.")
-                        newus = userreq
-                    else:
-                        print("err")
-                except Exception as e:
-                    print(f"sign in err, {e}")
+            try:
+                print("hello user, in nova accounts you can 'log up' and 'sign in', enter a what you want")
+                novaccountinput = input("~/superlink/novaccounts/@:")
+                
+                if novaccountinput == "log up":
+                    usname = input("\nplease enter a name: ")
+                    novamail = f"{usname.strip().lower()}@novaccount.com"
+                    novacontactinputpasswd = input("please enter a passwd: ")
+                    print("verification")
+                    print("what word white?")
+                    print("-----------------")
+                    print("|               |")
+                    print("|   §ĲpĖR       |")
+                    print("|(for bad pc: sper, one letter miss)|")
+                    print("-----------------")
+                    print("'exit' for exit")
+                    while True:
+                        verifyinput = input("/:")
+                        if verifyinput == "super":
+                            print("ok, you have verified account.")
+                            supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                            break
+                        elif verifyinput == "exit":
+                            break
+                        else:
+                            print("invalid word.")
+                            print("try again.")
+                    try:
+                        firstone = supabase.auth.sign_up({"email": novamail, "password": novacontactinputpasswd})
+                        newuser = firstone.user 
+                        if not newuser:
+                            print("err")
+                        else:
+                            supabase.table("profiles").insert(
+                                {"id": newuser.id, "username": usname.strip()}
+                            ).execute()
+                            print("verifing...")
+                            time.sleep(2)
+                            print("\033[H\033[J", end="")
+                            print("welcome back, user. nice to see you.")
+                            print("ok, create. you can see your account in the command: getaccount")
+                            newus = newuser
+                    except Exception as e:
+                        print(f"sorry, err {e}")
+                elif novaccountinput == "sign in":
+                    usname = input("please enter a user: ")  
+                    novacontactinputpasswd = input("please enter a passwd: ")
+                    print("verification")
+                    print("what word white?")
+                    print("-----------------")
+                    print("|               |")
+                    print("|   §ĲpĖR       |")
+                    print("|(for bad pc: sper, one letter miss)|")
+                    print("-----------------")
+                    print("'exit' for exit")
+                    while True:
+                        verifyinput = input("/:")
+                        if verifyinput == "super":
+                            print("ok, you have verified account.")
+                            supabase.table("profiles").update({"verified": True}) .eq("username", usname).execute()
+                            break
+                        elif verifyinput == "exit":
+                            break
+                        else:
+                            print("invalid word.")
+                            print("try again.")
+                    novamail = f"{usname.strip().lower()}@novaccount.com"
+                    try:
+                        response = supabase.auth.sign_in_with_password({"email": novamail, "password": novacontactinputpasswd,})
+                        userreq = response.user
+                        if userreq:
+                            time.sleep(2)
+                            print("\033[H\033[J", end="")
+                            print("welcome back, user. nice to see you.")
+                            newus = userreq
+                        else:
+                            print("err")
+                    except Exception as e:
+                        print(f"sign in err, {e}")
+            except Exception as e:
+                print("")
+                print("err, connection is unstable or our servers are closed/temporarily closed, we will soon fix the bug")
         elif command == "getaccount --delete":
             try:
                 if newus == "":
@@ -2302,64 +2331,77 @@ if choice == 1:
             except Exception as e:
                 print(f"you dont have account. or err {e}")
         elif command == "version --max":
-            print(f"KILL OS linux max version: {requests.get('https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases/latest').json()['tag_name']}")
+            try:
+                print(f"KILL OS linux max version: {requests.get('https://api.github.com/repos/creator00004/KillOS-by-NOVA/releases/latest').json()['tag_name']}")
+            except Exception as e:
+                print("no connection err.")
         elif command == "NOVANetwork --chat":
             print("------------ NOVANetwork, chat for people from different countries, but users of KillOS ------------")
-            print("'exit' to exit")
-            print("'delete' or 'del' to delete your massages")
-            print("'get' to get new massages")
-            print(" :: advisable use English")
-            if not newus:
-                print("you don't have nova account> create account in 'NOVAccount'")
-            else:
-                rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=False).limit(30).execute())
-                if rspn.data:
-                    for row in rspn.data:
-                        time_str = row["created_at"].split("T")[1][:5]
-                        print(f"[{time_str}] {row['username']}: {row['massage']}")
+            try:
+                print("'exit' to exit")
+                print("'delete' or 'del' to delete your massages")
+                print("'get' to get new massages")
+                print(" :: advisable use English")
+                if not newus:
+                    print("you don't have nova account> create account in 'NOVAccount'")
                 else:
-                    print("chat is empty, send message?")
-                while True:
-                    try:
-                        chatmassag = input(f"{novacontactmail}/:")
-                        if chatmassag == "":
-                            print("massage is empty.")
-                        elif chatmassag == "exit":
-                            print("exit chat.")
-                            print("---------------------------------------------------------------------------------------------------")
-                            break
-                        elif chatmassag in ("delete", "del"):
-                            supabase.table("massages").delete().eq("user_id", newus.id).execute()
-                            print("your massages deleted.")
-                        elif chatmassag == "get":
-                            rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(6).execute())
-                            if rspn.data:
-                                for row in rspn.data:
-                                    time_str = row["created_at"].split("T")[1][:5]
-                                    print(f"[{time_str}] {row['username']}: {row['massage']}")
+                    rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=False).limit(30).execute())
+                    if rspn.data:
+                        for row in rspn.data:
+                            time_str = row["created_at"].split("T")[1][:5]
+                            print(f"[{time_str}] {row['username']}: {row['massage']}")
+                    else:
+                        print("chat is empty, send message?")
+                    while True:
+                        try:
+                            chatmassag = input(f"{novacontactmail}/:")
+                            if chatmassag == "":
+                                print("massage is empty.")
+                            elif chatmassag == "exit":
+                                print("exit chat.")
+                                print("---------------------------------------------------------------------------------------------------")
+                                break
+                            elif chatmassag in ("delete", "del"):
+                                supabase.table("massages").delete().eq("user_id", newus.id).execute()
+                                print("your massages deleted.")
+                            elif chatmassag == "get":
+                                rspn = (supabase.table("massages").select("username, massage, created_at").order("created_at", desc=True).limit(6).execute())
+                                if rspn.data:
+                                    for row in rspn.data:
+                                        time_str = row["created_at"].split("T")[1][:5]
+                                        print(f"[{time_str}] {row['username']}: {row['massage']}")
+                                else:
+                                    print("chat is empty.")
                             else:
-                                print("chat is empty.")
-                        else:
-                            newusrsp = supabase.auth.get_user()
-                            newusrid = newusrsp.user.id
-                            profilersp = (
-                                supabase.table("profiles")
-                                .select("username")
-                                .eq("id", newusrid)
-                                .execute()
-                            )
+                                newusrsp = supabase.auth.get_user()
+                                newusrid = newusrsp.user.id
+                                profilersp = (
+                                    supabase.table("profiles")
+                                    .select("username")
+                                    .eq("id", newusrid)
+                                    .execute()
+                                )
 
-                            usnme = profilersp.data[0]["username"]
-                            supabase.table("massages").insert({
-                                "user_id": newusrid,
-                                "username": usnme,
-                                "massage": chatmassag,
-                            }).execute()
+                                usnme = profilersp.data[0]["username"]
+                                supabase.table("massages").insert({
+                                    "user_id": newusrid,
+                                    "username": usnme,
+                                    "massage": chatmassag,
+                                }).execute()
 
-                    except Exception as e:
-                        print(f"you don't have nova account. or err {e}")
+                        except Exception as e:
+                            print(f"you don't have nova account. or err {e}")
+            except Exception as e:
+                            print("")
+                            print(f"err, connection is unstable or our servers are closed/temporarily closed, we will soon fix the bug, or error for admins & dev: {e}")
         elif command == "our TikTok":
-            webbrowser.open("tiktok.com/@novakillos")
+            try:
+                webbrowser.open("tiktok.com/@novakillos")
+            except Exception as e:
+                print(f"err. error for admins & dev: {e}. or connection err")
+        elif command == "htl":
+            print('open the code in any IDE, next install modules in console with 1: cd "[your/path/to/killos]" 2: pip install -r req.txt')
+            
         else:
             print(f"\rUnknown command or {PermissionE}, or invalid directory.")
 elif choice == 2:
