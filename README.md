@@ -1,6 +1,8 @@
 ------------LINUX START PROGRAM----------------
 
 open code .py in any IDE, with console (maybe "kitty") install modules with step 1: cd "your/path/to/downloaded/killos" step 2: pip install -r req.txt
+AND Don't forget that the program may work in an uninhabitable way. If you want to ensure stable operation of the program, you will need to cut out some functions from the code related to files in windows
+
 
 ------------IMPORTANT ABOUT DOWNLOADS----------
 
